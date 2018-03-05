@@ -8,7 +8,7 @@ import math
 import pickle
 import collections
 
-fileName = "14MersDistancesResults.txt"
+fileName = "4MersDistancesResults.txt"
 matchSeq = {}
 with open(fileName, "r") as f2:
       for linef2 in f2:
@@ -20,14 +20,15 @@ with open(fileName, "r") as f2:
           matchSeq[key] = vals
 f2.close()
 matchSeq2 = collections.OrderedDict(sorted(matchSeq.items()))
-for i in matchSeq2:
-    print i
+#for i in matchSeq2:
+    #print i
 
 
 print ("strated pickling")
-pickle_out = open("14MerDistances.pickle","wb")
+pickle_out = open("4MerDistances.pickle","wb")
 pickle.dump(matchSeq2, pickle_out)
 pickle_out.close()
+print ("finished pickling")
 
 '''
 print len(matchSeq2)
@@ -35,4 +36,3 @@ print len(matchSeq2)
 for i in matchSeq2:
     print i
 '''
-

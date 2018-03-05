@@ -33,8 +33,8 @@ eur_sas = []
 
 kk = []
 #pickle_in = open("cosSimK12AllNations.pickle","rb")
-pickle_in = open("14MerDistances.pickle","rb")
-name = 'cosSimK14AllNations'
+pickle_in = open("4MerDistances.pickle","rb")
+name = 'cosSimK4AllNations'
 mydict = pickle.load(pickle_in)
 mydictOrdered = collections.OrderedDict(sorted(mydict.items()))
 #print mydictOrdered
@@ -227,4 +227,3 @@ for i in range(0,len(all_pop),1):
     plt.savefig('cosSim%s5k.pdf' % all_pop_strings[i], bbox_inches='tight')
 
 '''
-
