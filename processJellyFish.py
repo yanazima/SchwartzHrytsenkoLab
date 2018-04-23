@@ -31,13 +31,13 @@ def countFrequencies(names,kvalue):
         for n in range(int(i/2),int((i/2)+1),1):
                 fileName = names[i]
                 fileName2 = names[i+1]
-                fileNameOut = "%s_mer_counts_%s.jf" % (fileName[:10],kvalue) #will contain the results from left and right read together
-                #fileNameOut = "%s_mer_counts_%s.jf" % (fileName[:11],kvalue) #will contain the results from left and right read together
+                #fileNameOut = "%s_mer_counts_%s.jf" % (fileName[:10],kvalue) #will contain the results from left and right read together
+                fileNameOut = "%s_mer_counts_%s.jf" % (fileName[:11],kvalue) #will contain the results from left and right read together
                 subprocess.call("/bin/bash -c \"jellyfish count <(gunzip -c %s) <(gunzip -c %s) -m %d -s 100M -t 28 -C -o %s\"" % (fileName,fileName2, kvalue, fileNameOut), shell=True)
 
                 fileName = fileNameOut
-                fileNameOut = "%s_counts_out_%s.fa" % (fileName[:10],kvalue)
-                #fileNameOut = "%s_counts_out_%s.fa" % (fileName[:11],kvalue)
+                #fileNameOut = "%s_counts_out_%s.fa" % (fileName[:10],kvalue)
+                fileNameOut = "%s_counts_out_%s.fa" % (fileName[:11],kvalue)
                 subprocess.call("jellyfish dump %s > %s -c" % (fileName, fileNameOut), shell=True)
     subprocess.call("find . -type f -iname \*.jf -delete", shell=True)
 
