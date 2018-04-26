@@ -1,5 +1,6 @@
  1. Driver script: run all the files in sequential order (ADD THIS FILE)
  2. Process fastq.gz files with JellyFish package to get kmer frequencies: processJellyFish.py
+    Usage: python processJellyFish.py 12 , where 12 is any k-value (except 7-9, jellyfish is lagging on this values)
  3. Read in .fa files, put them into dictionaries, pickle them: pickleFAsDict.py
  4. Read in .pickle dictionaries, calculate Cosine distances between them with Tensorflow package, output results as a .txt file: run calcDistTF.py with processPair.sh
  5. Read in from .txt the distances and put them into a .pickle dictionary: readFromOutDist.py
@@ -8,3 +9,4 @@
  8. To check the closest neighbor to a sample use: python checkClosestNeighbour.py 12MersDistancesResultsGreater1_000_000.pickle
  9. To plot closest neighbor use: python plotClosestNeighbor.py 12MersDistancesResultsGreater1000.pickle
  10.To plot HeatMap for all the 600 distances between each pair of samples use: HeatMaps.py
+ 11. To calculate a fraction of discarded frequencies use: runDiscardedCalc.sh which runs getFractionOfDiscardedFrequencies.py
