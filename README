@@ -10,3 +10,4 @@
  9. To plot closest neighbor use: python plotClosestNeighbor.py 12MersDistancesResultsGreater1000.pickle
  10.To plot HeatMap for all the 600 distances between each pair of samples use: HeatMaps.py
  11. To calculate a fraction of discarded frequencies use: runDiscardedCalc.sh which runs getFractionOfDiscardedFrequencies.py
+ 12. To make a histogram of the frequencies use makeHisto.py
