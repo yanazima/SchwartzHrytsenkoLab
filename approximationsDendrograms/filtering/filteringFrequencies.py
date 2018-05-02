@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import tensorflow as tf
 import os
 import sys
 import glob
@@ -23,16 +22,19 @@ def filterFrequencies(fileName,kvalue,filterValue):
 
     pickle_in = open(fileName,"rb")
     unfilteredDict = pickle.load(pickle_in)
+    #print unfilteredDict #works here
+
 
     filteredDict = {}
     for keys in unfilteredDict:
-        if (unfilteredDict[keys] > filterValue):
+
+        if (unfilteredDict[keys] > int(filterValue)):
             key = keys
             val = unfilteredDict[keys]
             filteredDict[key] = val
 
-    picName = "%s_%s_>%s.pickle" % (fileName[:9],kvalue,filterValue)
-    print picName
+    picName = "%s_%s_%s.pickle" % (fileName[:9],kvalue,filterValue)
+    #print picName
 
     pickle_out = open(picName,"wb" )
     pickle.dump(filteredDict, pickle_out)
